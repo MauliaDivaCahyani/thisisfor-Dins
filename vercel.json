@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/happy-birthday-reza",
+      "dest": "/happy-birthday-reza.html"
+    },
+    {
+      "src": "/surprise-birthday", 
+      "dest": "/surprise-birthday.html"
+    }
+  ]
+}
