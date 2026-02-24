@@ -20,6 +20,8 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
             position: relative;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         @keyframes gradientShift {
@@ -41,8 +43,9 @@
             text-align: center;
             z-index: 100;
             position: relative;
-            max-width: 90vw;
+            max-width: 95vw;
             margin-bottom: 2rem;
+            padding: 0 15px;
         }
 
         .main-content {
@@ -72,6 +75,8 @@
             z-index: 1000;
             text-transform: uppercase;
             letter-spacing: 1px;
+            white-space: nowrap;
+            max-width: 90vw;
         }
 
         .next-slide-btn:hover {
@@ -105,6 +110,9 @@
             font-size: 1rem;
             z-index: 1000;
             animation: fadeInUp 2s ease-out 3s both;
+            max-width: 90vw;
+            text-align: center;
+            word-wrap: break-word;
         }
 
         @keyframes fadeInUp {
@@ -125,7 +133,7 @@
             align-items: start;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
             z-index: 100;
             position: relative;
         }
@@ -335,7 +343,7 @@
         }
 
         .main-message {
-            font-size: clamp(2rem, 8vw, 6rem);
+            font-size: clamp(1.5rem, 6vw, 6rem);
             font-weight: bold;
             background: linear-gradient(45deg, #c9aa71 0%, #e8e8e8 25%, #4682b4 50%, #c9aa71 75%, #a0824d 100%);
             -webkit-background-clip: text;
@@ -346,6 +354,7 @@
             margin-bottom: 2rem;
             animation: bounceIn 2s ease-out, gradientShift 4s ease-in-out infinite;
             line-height: 1.2;
+            padding: 0 10px;
         }
 
         @keyframes bounceIn {
@@ -538,9 +547,121 @@
             }
         }
 
-        @media (max-width: 768px) {
+        /* Extra small devices (phones, 320px and up) */
+        @media (max-width: 320px) {
             .main-message {
+                font-size: clamp(1.2rem, 8vw, 2.5rem);
                 margin-bottom: 1rem;
+                line-height: 1.1;
+                padding: 0 5px;
+            }
+            
+            .birthday-container {
+                padding: 0 5px;
+                max-width: 98vw;
+            }
+            
+            .next-slide-btn {
+                bottom: 15px;
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                letter-spacing: 0.5px;
+                max-width: 85vw;
+            }
+
+            .welcome-text {
+                bottom: 80px;
+                padding: 10px 15px;
+                font-size: 0.8rem;
+                max-width: 85vw;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .birthday-photo {
+                width: 140px;
+                height: 180px;
+            }
+            
+            .photo-card, .message-card {
+                padding: 15px;
+                border-radius: 15px;
+                margin: 0 5px;
+            }
+            
+            .surprise-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+                letter-spacing: 0.5px;
+                max-width: 85vw;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            .surprise-card {
+                padding: 15px;
+                margin-top: 15px;
+            }
+
+            .content-grid {
+                padding: 10px 5px;
+            }
+        }
+
+        /* Small devices (phones, 321px to 480px) */
+        @media (min-width: 321px) and (max-width: 480px) {
+            .main-message {
+                font-size: clamp(1.4rem, 7vw, 3rem);
+                margin-bottom: 1rem;
+                padding: 0 10px;
+            }
+            
+            .birthday-container {
+                padding: 0 10px;
+            }
+            
+            .next-slide-btn {
+                bottom: 20px;
+                padding: 12px 25px;
+                font-size: 1rem;
+                letter-spacing: 0.5px;
+                max-width: 90vw;
+            }
+
+            .welcome-text {
+                bottom: 100px;
+                padding: 12px 18px;
+                font-size: 0.85rem;
+                max-width: 90vw;
+            }
+
+            .birthday-photo {
+                width: 160px;
+                height: 200px;
+            }
+            
+            .photo-card, .message-card {
+                padding: 18px;
+                border-radius: 18px;
+            }
+            
+            .surprise-btn {
+                padding: 14px 30px;
+                font-size: 1.1em;
+                letter-spacing: 0.8px;
+            }
+            
+            .surprise-card {
+                padding: 20px;
+                margin-top: 18px;
+            }
+        }
+
+        /* Medium devices (tablets and large phones, 481px to 768px) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .main-message {
+                margin-bottom: 1.5rem;
             }
             
             .sub-message {
@@ -561,10 +682,10 @@
             }
 
             .next-slide-btn {
-                bottom: 20px;
-                padding: 12px 25px;
-                font-size: 1rem;
-                letter-spacing: 0.5px;
+                bottom: 25px;
+                padding: 14px 28px;
+                font-size: 1.05rem;
+                letter-spacing: 0.8px;
             }
 
             .birthday-photo {
@@ -586,6 +707,30 @@
             .surprise-card {
                 padding: 25px;
                 margin-top: 20px;
+            }
+        }
+
+        /* Landscape orientation adjustments for mobile */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .main-message {
+                font-size: clamp(1.2rem, 5vw, 2.5rem);
+                margin-bottom: 0.5rem;
+            }
+            
+            .next-slide-btn {
+                bottom: 10px;
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+
+            .welcome-text {
+                bottom: 60px;
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+
+            .birthday-container {
+                margin-bottom: 1rem;
             }
         }
     </style>
